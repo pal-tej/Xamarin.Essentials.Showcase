@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CompassDemo.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Compass Demo" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="The Compass class lets you monitor the device's magnetic north heading. The Compass functionality works by calling the Start and Stop methods to listen for changes to the compass. Any changes are sent back through the ReadingChanged event." FontSize="16" Padding="30,0,30,0"/>
+        <Label FontSize="16" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at "/>
+                        <Span Text="https://docs.microsoft.com/en-us/xamarin/essentials/compass" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Image Source="compass.png" WidthRequest="128" HeightRequest="128" Rotation="{Binding HeadingMagneticNorth}" />
+        <Label Text="{Binding HeadingMagneticNorth}" />
+        <Button Text="Start" Command="{Binding StartCommand}" />
+        <Button Text="Stop" Command="{Binding StopCommand}" />
+    </StackLayout>
+
+</ContentPage>
