@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AccelerometerDemo.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Accelerometer Demo" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="The Accelerometer class lets you monitor the device's accelerometer sensor, which indicates the acceleration of the device in three-dimensional space." FontSize="16" Padding="30,0,30,0"/>
+        <Label FontSize="16" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at "/>
+                        <Span Text="https://docs.microsoft.com/en-us/xamarin/essentials/accelerometer" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label Text="{Binding X, StringFormat='X: {0:F1}'}" FontSize="36" Margin="4" />
+        <Label Text="{Binding Y, StringFormat='Y: {0:F1}'}" FontSize="36" Margin="4"  />
+        <Label Text="{Binding Z, StringFormat='Z: {0:F1}'}" FontSize="36" Margin="4" />
+
+        <Button Text="{Binding ButtonText}" Command="{Binding ToggleCommand}" Margin="4"/>
+    </StackLayout>
+
+</ContentPage>
