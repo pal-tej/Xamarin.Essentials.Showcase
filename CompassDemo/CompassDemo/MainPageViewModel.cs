@@ -39,14 +39,15 @@ namespace CompassDemo
                     Compass.ReadingChanged += OnCompassReadingChanged;
                     Compass.Start(SensorSpeed.UI);
                 }
-            
             });
 
             StopCommand = new Command(() => {
 
                 if (Compass.IsMonitoring)
+                {
+                    Compass.ReadingChanged -= OnCompassReadingChanged;
                     Compass.Stop();
-            
+                }
             });
         }
 

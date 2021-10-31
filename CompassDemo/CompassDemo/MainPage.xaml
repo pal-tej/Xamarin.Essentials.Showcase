@@ -4,11 +4,11 @@
              x:Class="CompassDemo.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Compass Demo" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0"  Margin="4" >
+            <Label Text="Compass Demo" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"  Margin="4" />
         </Frame>
-        <Label Text="The Compass class lets you monitor the device's magnetic north heading. The Compass functionality works by calling the Start and Stop methods to listen for changes to the compass. Any changes are sent back through the ReadingChanged event." FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
+        <Label Text="The Compass class lets you monitor the device's magnetic north heading. The Compass functionality works by calling the Start and Stop methods to listen for changes to the compass. Any changes are sent back through the ReadingChanged event." FontSize="16" Padding="30,0,30,0"   Margin="4" />
+        <Label FontSize="16" Padding="30,24,30,20">
             <Label.FormattedText>
                 <FormattedString>
                     <FormattedString.Spans>
@@ -18,10 +18,10 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <Image Source="compass.png" WidthRequest="128" HeightRequest="128" Rotation="{Binding HeadingMagneticNorth}" />
-        <Label Text="{Binding HeadingMagneticNorth}" />
-        <Button Text="Start" Command="{Binding StartCommand}" />
-        <Button Text="Stop" Command="{Binding StopCommand}" />
+        <Image Source="compass.png" WidthRequest="128" HeightRequest="128" Rotation="{Binding HeadingMagneticNorth}" Margin="4" />
+        <Label Text="{Binding HeadingMagneticNorth, StringFormat='{0:F1} °'}" HorizontalTextAlignment="Center" FontSize="36" FontAttributes="Bold" Margin="4"/>
+        <Button Text="Start" Command="{Binding StartCommand}" Margin="4"/>
+        <Button Text="Stop" Command="{Binding StopCommand}" Margin="4" />
     </StackLayout>
 
 </ContentPage>
